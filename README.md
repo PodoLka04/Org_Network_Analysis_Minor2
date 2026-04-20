@@ -1,3 +1,11 @@
+# 🌐 Language / Язык
+
+[🇬🇧 English](#english) | [🇷🇺 Русский](#russian)
+
+---
+
+## <a name="russian"></a> 
+
 # Взаимосвязи в компании: сетевой анализ email-переписки
 
 ## 📌 О проекте
@@ -25,6 +33,7 @@
 | `analysis.Rmd` | Исходный код на R (не исполняется без доступа к данным) |
 | `Задание.png` | Скриншот задания с платформы Smart LMS |
 | `Оценка_Отзыв.png` | Скриншот оценки с отзывом с той же платформы |
+
 ---
 
 ## 🔍 Что было сделано
@@ -107,3 +116,118 @@
 
 Подолин Дмитрий  
 НИУ ВШЭ, курс "Технологии анализа данных"
+
+---
+
+## <a name="english"></a> 
+
+# Company Interactions: Email Network Analysis
+
+## 📌 About the project
+
+The project was completed as part of the **"Data Analysis Technologies"** course (HSE Minor, 2nd semester).
+
+**Task:**  
+Study the interaction structure of company employees based on email correspondence data (authors, recipients, carbon copies).
+
+**Data:**  
+- 184 employees  
+- >120,000 emails over 2.5 years  
+- The project analyzes **one month** (period specified by the instructor)
+
+> ⚠️ **Important:** The original data was stored on a university server that is currently inaccessible.  
+> Therefore, **the Rmd code cannot be executed**, but the **research results are preserved in the HTML report**.
+
+---
+
+## 📁 Repository contents
+
+| File | Description |
+|------|-------------|
+| `report.html` | **Complete HTML report** with visualizations, calculations, and conclusions |
+| `analysis.Rmd` | R source code (cannot be executed without data access) |
+| `Задание.png` | Screenshot of the assignment from the Smart LMS platform |
+| `Оценка_Отзыв.png` | Screenshot of the grade and feedback from the same platform |
+
+---
+
+## 🔍 What was done
+
+- Built and visualized the interaction network for the analyzed month  
+- Calculated **centrality measures**:  
+  - degree centrality  
+  - betweenness centrality  
+  - closeness centrality  
+- Identified **communities** using two methods:  
+  - edge.betweenness  
+  - walktrap (selected as more accurate based on modularity)  
+- Conducted **advanced analysis**:  
+  - assortativity test (impact of position on connections)  
+  - identification of bridge vertices between communities  
+- Formulated and tested **two research questions** (see report)
+
+### Research questions
+
+1. **Who are the "bridges" between communities?**  
+   → Vertices 6 and 67 were identified (their role and interpretation are provided in the report)
+
+2. **Does having the same position affect connection formation?**  
+   → The assortativity test showed **no effect** (p-value = 0.94, null hypothesis not rejected)
+
+---
+
+## 🧑‍💼 Analysis of a specific employee
+
+**Employee:** `Lawrence May` (larry.may)  
+**Position:** Director  
+**Vertex number:** 85
+
+### Results:
+
+- **Centrality:** above average in the network (both degree and betweenness)  
+- **Community:** belongs to **community #3** (only 9 people)  
+- **Interpretation:** Lawrence May is a significant network participant with influence both within and outside his community. His close circle can be used to influence him.
+
+---
+
+## 📊 Key findings
+
+1. Employees with maximum centrality scores were identified — key nodes for internal communications.
+2. Two "bridge" individuals (vertices 6 and 67) connecting different communities were found. They play an important role in information dissemination and maintaining network integrity.
+3. Position **does not affect** email connection formation (no clustering by position).
+4. Lawrence May holds an important place in the network; his circle includes 8 people from the same community.
+
+---
+
+## 📎 Grade and instructor feedback
+
+- **Grade:** 7.70 / 10.00  
+- **Instructor:** Alena V. Suvorova  
+- **Comment:**  
+  > *Many warnings, only technical descriptions. How to interpret for the real world? The first research question is not formulated as a question, it's more like an investigating analysis.*
+
+In the current version of the report, the research questions have been reformulated and meaningful interpretations have been added.
+
+---
+
+## 🚀 How to view the results
+
+Simply open the **`report.html`** file in any browser.
+
+---
+
+## 🛠 Tools
+
+- R  
+- igraph  
+- tidyverse (dplyr, ggplot2, tidyr)  
+- ggraph  
+- wordcloud2  
+- lubridate
+
+---
+
+## 📌 Author
+
+Dmitrii Podolin  
+HSE University, "Data Analysis Technologies" course
